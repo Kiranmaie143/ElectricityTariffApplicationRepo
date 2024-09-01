@@ -1,0 +1,13 @@
+@ElectricityTariffTest.Server_HostAddress = http://localhost:5062
+
+GET {{ElectricityTariffTest.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+### Calculate Tariffs for 3500 kWh
+POST {{ElectricityTariffTest.Server_HostAddress}}/api/tariffs
+Content-Type: application/json
+
+{
+  "consumption": 3500
+}
